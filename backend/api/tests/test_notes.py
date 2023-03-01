@@ -7,7 +7,11 @@ from rest_framework.test import (
 from rest_framework import status
 
 from api import models, serializers
-from api.tests.utils import *
+from api.tests.utils import (
+    create_note,
+    get_note_detail_url,
+    NOTES_LIST_URL,
+)
 
 
 class PublicNotesTests(APITestCase):
