@@ -4,6 +4,8 @@ from api import models
 
 
 NOTES_LIST_URL = reverse('notes-list')
+PROFILE_URL = reverse('profile')
+REGISTER_URL = reverse('register-user')
 
 
 def create_note(user, body='Test note', category=None):
