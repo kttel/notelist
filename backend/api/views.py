@@ -8,7 +8,7 @@ from rest_framework.authtoken.serializers import AuthTokenSerializer
 
 from knox.views import LoginView as KnoxLoginView
 
-from api import models, serializers
+from api import models, serializers, permissions as api_permissions
 
 
 @api_view()
@@ -64,6 +64,7 @@ class NotesListView(generics.ListCreateAPIView):
 class NoteDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Note.objects.all()
     serializer_class = serializers.NoteSerializer
+    permission_classes = (api_permissions.OwnObjectPermission,)
 
 
 class CategoryListView(generics.ListCreateAPIView):

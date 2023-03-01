@@ -15,7 +15,7 @@ class Category(models.Model):
 class Note(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,
                              null=True, blank=True)
-    body = models.TextField(null=True, blank=True)
+    body = models.TextField()
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL,
