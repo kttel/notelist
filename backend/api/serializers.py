@@ -65,7 +65,7 @@ class NoteSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    total_notes = serializers.IntegerField()
+    total_notes = serializers.IntegerField(read_only=True)
 
     class Meta:
         model = get_user_model()
